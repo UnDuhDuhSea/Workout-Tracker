@@ -30,9 +30,7 @@ router.put("/api/workouts/:id", async (req, res) => {
 
 router.get("/api/workouts/range", async (req, res) => {
   try {
-    const lastWorkout = await await db.Workout.find({})
-      .limit(7)
-      .sort({ _id: -1 });
+    const lastWorkout = await db.Workout.find({}).limit(7).sort({ _id: -1 });
     const reverseWeekWorkout = lastWorkout.reverse();
     res.status(200).json(reverseWeekWorkout);
   } catch (error) {

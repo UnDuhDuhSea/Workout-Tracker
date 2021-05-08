@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const WorkoutSchema = new Schema({
   day: {
@@ -54,6 +54,6 @@ WorkoutSchema.virtual("totalDuration").get(function () {
     : 0;
 });
 
-const Workout = mongoose.model("Workout", WorkoutSchema);
+const Workout = model("Workout", WorkoutSchema);
 
 module.exports = Workout;
