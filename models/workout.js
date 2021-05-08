@@ -39,11 +39,20 @@ const WorkoutSchema = new Schema({
   ],
 });
 
-// WorkoutSchema.methods.nameOfMethod = function () {
-//     this.fullName = `${this.firstName} ${this.lastName}`;
+// WorkoutSchema.virtual(totalDuration).get(function () {
+//   let total = 0;
+//   for (let i = 0; i < this.exercises.length; i++) {
+//     const element = this.exercises[i].duration;
+//     total += element;
+//   }
+//   return total;
+// });
 
-//     return this.fullName;
-//   };
+WorkoutSchema.virtual("totalDuration").get(function () {
+  return this.exercises.length
+    ? this.exercises.reduce((total, { duration }) => total + duration, 0)
+    : 0;
+});
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
