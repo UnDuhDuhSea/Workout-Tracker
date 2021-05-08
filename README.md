@@ -4,7 +4,7 @@
 
 # Workout-Tracker
 
-https://git.heroku.com/agile-ocean-98188.git
+https://agile-ocean-98188.herokuapp.com/?id=6095e31032615a0015e2b7b5
 
 ![workoutTrackerImg](public/imgs/workoutTrackerImg.jpg)
 
